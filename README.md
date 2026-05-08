@@ -1,6 +1,6 @@
 # Acadêmico — Chatbot RAG para o curso de CDML do CEUB
 
-Assistente acadêmico que combina **busca semântica (RAG)** sobre o conteúdo das matérias com **dados estruturados** do aluno (calendário, notas, frequência) para responder dúvidas sobre o curso de Ciência de Dados e Machine Learning do CEUB
+Assistente acadêmico que combina **busca semântica (RAG)** sobre o conteúdo das matérias com **dados estruturados** do aluno (calendário, notas, frequência) para responder dúvidas sobre o curso de Ciência de Dados e Machine Learning do CEUB.
 
 ## Arquitetura
 
