@@ -1,0 +1,4 @@
+# Dependencias usadas SOMENTE em desenvolvimento local (rodar ingest.py com embeddings locais).
+# Nao sao instaladas na Vercel (excluidas via .vercelignore) para nao estourar o limite de 250MB.
+-r requirements.txt
+sentence-transformers==3.3.1

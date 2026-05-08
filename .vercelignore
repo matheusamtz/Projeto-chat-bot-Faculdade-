@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.venv/
+venv/
+.git/
+.DS_Store
+data/test.txt
+data/*.db-journal
+requirements-dev.txt

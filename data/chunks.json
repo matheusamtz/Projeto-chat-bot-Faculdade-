@@ -1,0 +1,312 @@
+[
+  {
+    "source": "disciplinas-1-semestre.md",
+    "section": "ALGA — Álgebra Linear e Geometria Analítica",
+    "content": "[ALGA — Álgebra Linear e Geometria Analítica]\nCarga: 60h. Horário: Quarta 08:00–09:40 e 10:00–10:50.\nEmenta: vetores no plano e no espaço, operações com vetores (soma, produto escalar, produto vetorial), retas e planos, sistemas de equações lineares, matrizes (operações, determinante, inversa), espaços vetoriais, transformações lineares, autovalores e autovetores. Conexão com Ciência de Dados: praticamente todo algoritmo de Machine Learning é matriz e vetor por baixo. Regressão linear é resolução de sistema linear via mínimos quadrados. PCA é decomposição em autovetores da matriz de covariância. Redes neurais são multiplicações de matrizes de pesos por vetores de entrada. Embeddings (como os usados em RAG) são vetores de alta dimensão num espaço vetorial. Bibliografia: Boldrini \"Álgebra Linear\", Anton \"Álgebra Linear com Aplicações\". Tópicos críticos para provas: cálculo de determinante, inversão de matriz por escalonamento, resolução de sistemas, diagonalização."
+  },
+  {
+    "source": "disciplinas-1-semestre.md",
+    "section": "BDI — Banco de Dados I",
+    "content": "[BDI — Banco de Dados I]\nCarga: 60h. Horário: Sexta 08:00–09:40 e 10:00–10:50.\nEmenta: introdução a banco de dados relacionais, modelo entidade-relacionamento (MER), normalização (1FN, 2FN, 3FN, BCNF), SQL básico (SELECT, INSERT, UPDATE, DELETE), cláusulas WHERE, ORDER BY, GROUP BY, HAVING, JOINs (INNER, LEFT, RIGHT, FULL), subconsultas, integridade referencial, chaves primárias e estrangeiras, transações ACID. Trabalho prático: modelagem e implementação de um banco de dados em PostgreSQL ou MySQL. Conexão com CD: SQL é a linguagem do dia-a-dia de qualquer cientista de dados. Saber escrever JOINs eficientes e entender índices economiza horas em análises. Bibliografia: Elmasri & Navathe \"Sistemas de Banco de Dados\", Date \"Introdução a Sistemas de Banco de Dados\". Avaliações típicas: P1 com modelagem ER + queries SQL básicas; P2 com normalização + queries complexas com múltiplos JOINs e subconsultas."
+  },
+  {
+    "source": "disciplinas-1-semestre.md",
+    "section": "BOOTI — Bootcamp I",
+    "content": "[BOOTI — Bootcamp I]\nCarga: 75h. Sem horário fixo (atividade intensiva).\nFormato: bootcamp prático de imersão, geralmente concentrado em períodos específicos do semestre. Foco em integrar conhecimentos das outras disciplinas em um projeto guiado. Tipicamente envolve: definição de problema com dataset real, exploração inicial dos dados, formulação de hipóteses, primeira modelagem simples e apresentação. Avaliação por entregas e participação. Não tem prova clássica — a nota vem do projeto e da apresentação final."
+  },
+  {
+    "source": "disciplinas-1-semestre.md",
+    "section": "ES — Engenharia de Software",
+    "content": "[ES — Engenharia de Software]\nCarga: 60h. Horário: Terça 08:00–09:40 e 10:00–10:50.\nEmenta: ciclo de vida de software, metodologias ágeis (Scrum, Kanban, XP), versus modelo cascata, levantamento e especificação de requisitos (funcionais e não funcionais), modelagem com UML (casos de uso, classes, sequência), padrões de projeto (Singleton, Factory, Observer, MVC), controle de versão com Git, testes (unitário, integração, sistema), integração contínua. Conexão com CD: Cientistas de Dados que sabem ES escrevem código mais limpo, modular e reproduzível, fazem code review, usam Git corretamente e entregam projetos sustentáveis. Bibliografia: Pressman \"Engenharia de Software: uma Abordagem Profissional\", Sommerville \"Engenharia de Software\". Avaliações: provas teóricas + projeto em grupo aplicando metodologia ágil."
+  },
+  {
+    "source": "disciplinas-1-semestre.md",
+    "section": "ICD — Introdução à Ciência de Dados",
+    "content": "[ICD — Introdução à Ciência de Dados]\nCarga: 60h. Horário: Quinta 08:00–09:40 e 10:00–10:50.\nEmenta: o que é Ciência de Dados, papel do cientista de dados, pipeline CRISP-DM (entendimento do negócio, dos dados, preparação, modelagem, avaliação, implantação), introdução a Python para análise (Pandas, NumPy, Matplotlib), análise exploratória de dados (EDA), tipos de problemas (classificação, regressão, agrupamento), introdução a métricas, ética e LGPD aplicada a dados, panorama do mercado e ferramentas. Conexão prática: é a disciplina que dá o panorama. Tudo o que você verá nos próximos semestres é detalhamento do que ICD apresenta. Bibliografia: Provost & Fawcett \"Data Science for Business\", Grus \"Data Science do Zero\". Avaliações: provas + estudo de caso prático com dataset real, geralmente entregue como notebook Jupyter."
+  },
+  {
+    "source": "disciplinas-1-semestre.md",
+    "section": "LP — Lógica de Programação",
+    "content": "[LP — Lógica de Programação]\nCarga: 60h. Horário: Segunda 08:00–09:40 e 10:00–10:50.\nEmenta: pensamento computacional, algoritmos, fluxogramas e pseudocódigo, variáveis e tipos primitivos, operadores aritméticos/lógicos/relacionais, estruturas condicionais (if/else, switch), estruturas de repetição (for, while, do-while), vetores e matrizes, funções e modularização, recursão (introdução), depuração. Geralmente usa Python como linguagem principal. Conexão com CD: é a base para tudo. Quem domina lógica resolve qualquer disciplina de programação depois. Bibliografia: Forbellone \"Lógica de Programação\", Deitel \"Como Programar em Python\". Avaliações: provas com exercícios de código + listas semanais. Pré-requisito de DCDI no 2º semestre — sem aprovar LP, não cursa DCDI."
+  },
+  {
+    "source": "disciplinas-2-semestre.md",
+    "section": "BDII — Banco de Dados II",
+    "content": "[BDII — Banco de Dados II]\nCarga: 60h. Pré-req: BDI. Aprofunda o que foi visto em BDI: SQL avançado (CTEs, window functions, CASE, funções analíticas), índices (B-tree, hash) e otimização de queries com EXPLAIN, stored procedures, triggers, views materializadas, concorrência e isolamento de transações (READ COMMITTED, SERIALIZABLE), backup e recovery, tuning de performance. Trabalho prático: análise de planos de execução e otimização de queries lentas em datasets de tamanho razoável. Avaliações: provas com queries complexas + projeto de otimização."
+  },
+  {
+    "source": "disciplinas-2-semestre.md",
+    "section": "BII — Business Intelligence I",
+    "content": "[BII — Business Intelligence I]\nCarga: 60h. Sem pré-requisito. Introdução ao BI: data warehouse vs data lake, modelagem dimensional (esquema estrela e floco de neve), ETL (extração, transformação, carga), OLAP (Online Analytical Processing), KPIs e métricas de negócio, ferramentas de BI (Power BI principalmente, com noções de Tableau e Looker), criação de dashboards. Avaliação típica: dashboard final com dataset real, defendido em apresentação. Conexão: forma a base do que o cientista de dados entrega para tomada de decisão executiva."
+  },
+  {
+    "source": "disciplinas-2-semestre.md",
+    "section": "CC — Cálculo para Computação",
+    "content": "[CC — Cálculo para Computação]\nCarga: 60h. Sem pré-requisito formal, mas ALGA ajuda. Funções (lineares, polinomiais, exponenciais, logarítmicas, trigonométricas), limites, derivadas (regras, derivada de função composta, máximos e mínimos), integrais definidas e indefinidas, derivadas parciais, gradiente. Aplicações em otimização e ML: gradiente descendente é cálculo aplicado, função de custo em regressão é otimização de uma função convexa, backpropagation usa regra da cadeia. Bibliografia: Stewart \"Cálculo Volume 1\", Guidorizzi \"Um Curso de Cálculo\"."
+  },
+  {
+    "source": "disciplinas-2-semestre.md",
+    "section": "DCDI — Desenvolvimento para Ciência de Dados I",
+    "content": "[DCDI — Desenvolvimento para Ciência de Dados I]\nCarga: 60h. Pré-req: LP. Programação Python aplicada a dados: revisão de Python avançado, list comprehensions, generators, decorators, classes e POO, ambientes virtuais e gerenciadores de pacotes (pip, conda, poetry), Jupyter Notebooks, NumPy em profundidade (arrays, broadcasting, vetorização), Pandas (DataFrames, Series, leitura/escrita CSV/Excel/JSON, filtros, groupby, merge, pivot), introdução a Matplotlib e Seaborn. Avaliações: muitos exercícios práticos + projeto final de análise. É uma das disciplinas mais usadas no resto do curso."
+  },
+  {
+    "source": "disciplinas-2-semestre.md",
+    "section": "FSC — Fundamentos de Segurança Cibernética",
+    "content": "[FSC — Fundamentos de Segurança Cibernética]\nCarga: 60h. Sem pré-requisito. Princípios de segurança da informação (confidencialidade, integridade, disponibilidade — CIA), criptografia simétrica e assimétrica, hashing (MD5, SHA-256), assinatura digital, autenticação e autorização (OAuth, JWT), tipos de ataques (SQL injection, XSS, CSRF, phishing, ransomware), boas práticas de segurança em desenvolvimento, LGPD e GDPR. Conexão com CD: dados são o ativo principal — cientistas de dados precisam saber tratar dados sensíveis com segurança e respeitar leis de proteção."
+  },
+  {
+    "source": "disciplinas-3-semestre.md",
+    "section": "BDN — Banco de Dados NoSQL",
+    "content": "[BDN — Banco de Dados NoSQL]\nCarga: 60h. Pré-req: BDI. Famílias de bancos NoSQL: chave-valor (Redis, DynamoDB), documentos (MongoDB, CouchDB), colunares (Cassandra, HBase) e grafos (Neo4j). Quando usar SQL vs NoSQL, teorema CAP (consistência, disponibilidade, tolerância a partição), modelagem em MongoDB (collections, documents, embedding vs referenciamento), queries em MongoDB com find, aggregate pipeline, índices. Trabalho prático: implementar um caso de uso em SQL e NoSQL e comparar trade-offs."
+  },
+  {
+    "source": "disciplinas-3-semestre.md",
+    "section": "BOOTII — Bootcamp II",
+    "content": "[BOOTII — Bootcamp II]\nCarga: 75h. Sem horário fixo. Bootcamp prático com escopo maior que o BOOTI, geralmente envolvendo um problema com dados reais e ciclo completo de pipeline. Avaliação por entregas e apresentação. Conecta DCDI/DCDII com fundamentos de banco e BI."
+  },
+  {
+    "source": "disciplinas-3-semestre.md",
+    "section": "BIII — Business Intelligence II",
+    "content": "[BIII — Business Intelligence II]\nCarga: 60h. Pré-req: BII. Aprofunda BI: storytelling com dados, design de dashboards (princípios de Tufte, escolha de gráfico certo para cada métrica), DAX em Power BI (medidas calculadas, contexto de filtro), modelagem semântica avançada, performance de modelos, automação de pipelines de dados para BI, integração com bancos de dados e APIs. Projeto: dashboard executivo com métricas em tempo real."
+  },
+  {
+    "source": "disciplinas-3-semestre.md",
+    "section": "DCDII — Desenvolvimento para Ciência de Dados II",
+    "content": "[DCDII — Desenvolvimento para Ciência de Dados II]\nCarga: 60h. Pré-req: DCDI. Continuação aprofundada de Python para dados: APIs REST com Flask/FastAPI para servir modelos, manipulação avançada com Pandas, programação orientada a objetos aplicada a pipelines de dados, testes unitários com pytest, logging, tratamento de exceções, web scraping com BeautifulSoup e Selenium, automação de tarefas, introdução a containerização com Docker. Avaliação: projeto final implementando um pipeline completo."
+  },
+  {
+    "source": "disciplinas-3-semestre.md",
+    "section": "ECD — Estruturas para Ciência de Dados",
+    "content": "[ECD — Estruturas para Ciência de Dados]\nCarga: 60h. Pré-req: DCDI. Estruturas de dados clássicas com viés para CD: arrays, listas ligadas, pilhas, filas, hash tables, árvores binárias e de busca, heaps, grafos, complexidade assintótica (Big O), algoritmos de ordenação (merge sort, quick sort), algoritmos de busca (busca binária, BFS, DFS), algoritmos em grafos (Dijkstra, Kruskal). Por que importa em CD: implementações eficientes de operações em datasets grandes dependem de estruturas certas. Hash tables são base de groupby em Pandas."
+  },
+  {
+    "source": "disciplinas-3-semestre.md",
+    "section": "PE — Probabilidade e Estatística",
+    "content": "[PE — Probabilidade e Estatística]\nCarga: 60h. Sem pré-requisito formal. Probabilidade (espaço amostral, eventos, axiomas, condicional, Bayes), variáveis aleatórias (discretas e contínuas), distribuições (Bernoulli, binomial, Poisson, normal, exponencial, t, qui-quadrado), estatística descritiva (média, mediana, moda, variância, desvio padrão, quartis), inferência estatística (estimação pontual e intervalar, teste de hipóteses, p-valor, valor crítico), correlação e regressão linear simples, ANOVA. Conexão com ML: teste estatístico é base para validar diferenças entre modelos; distribuições normais aparecem em hipóteses de muitos algoritmos; Bayes é a base de Naive Bayes e de modelos probabilísticos."
+  },
+  {
+    "source": "disciplinas-4-semestre.md",
+    "section": "AMML — Aprendizagem de Máquina (Machine Learning)",
+    "content": "[AMML — Aprendizagem de Máquina (Machine Learning)]\nCarga: 75h. Pré-req: IA. Disciplina central do curso. Aprendizado supervisionado: regressão linear e logística, k-Nearest Neighbors, árvores de decisão, Random Forest, Gradient Boosting (XGBoost, LightGBM), SVM. Aprendizado não supervisionado: k-Means, DBSCAN, hierárquico, PCA, t-SNE. Métricas: acurácia, precisão, recall, F1, AUC-ROC, MAE, MSE, R². Validação cruzada, overfitting/underfitting, regularização (L1, L2), trade-off viés-variância, feature engineering. Ferramenta principal: scikit-learn. Avaliação: provas + projeto final com dataset real, modelagem completa com baseline, modelo principal e comparação por métricas."
+  },
+  {
+    "source": "disciplinas-4-semestre.md",
+    "section": "FBD — Fundamentos de Big Data",
+    "content": "[FBD — Fundamentos de Big Data]\nCarga: 75h. Sem pré-requisito. Conceitos: 5Vs do Big Data (volume, velocidade, variedade, veracidade, valor), arquiteturas distribuídas, Hadoop (HDFS, MapReduce), Apache Spark (RDDs, DataFrames, PySpark), processamento em batch vs streaming, Apache Kafka (introdução), introdução a serviços em nuvem (AWS S3, EMR, Athena; GCP BigQuery; Azure). Trabalho prático: pipeline em PySpark sobre dataset volumoso. Importância: cientistas de dados em empresas grandes lidam com bilhões de linhas — Pandas em uma máquina não dá conta."
+  },
+  {
+    "source": "disciplinas-4-semestre.md",
+    "section": "OACD — Otimização Aplicada à Ciência de Dados",
+    "content": "[OACD — Otimização Aplicada à Ciência de Dados]\nCarga: 75h. Sem pré-requisito formal. Programação linear, programação inteira, métodos de otimização contínua, gradiente descendente (batch, estocástico, mini-batch), Adam, otimização convexa, problemas de classificação como otimização, Lagrangianos. Aplicação direta: muito do treinamento de modelos de ML é otimização. Solver: scipy.optimize, CVXPY, e Linear Programming com PuLP."
+  },
+  {
+    "source": "disciplinas-4-semestre.md",
+    "section": "RI — Recuperação da Informação",
+    "content": "[RI — Recuperação da Informação]\nCarga: 75h. Sem pré-requisito. Disciplina diretamente relacionada a sistemas como RAG e mecanismos de busca. Modelo booleano, modelo vetorial (TF-IDF, similaridade do cosseno), BM25, indexação invertida, tokenização e normalização (stopwords, stemming, lematização), avaliação de sistemas de busca (precision@k, recall, MAP, MRR, nDCG), expansão de consulta, ranking, introdução a embeddings densos e busca semântica. Útil para entender por baixo dos panos como funciona um chatbot RAG. Trabalho prático: construir um motor de busca sobre uma coleção de documentos."
+  },
+  {
+    "source": "disciplinas-5-semestre.md",
+    "section": "APDL — Aprendizagem Profunda (Deep Learning)",
+    "content": "[APDL — Aprendizagem Profunda (Deep Learning)]\nCarga: 75h. Pré-req: AMML. Redes neurais artificiais (perceptron, MLP), funções de ativação (ReLU, sigmoid, tanh, softmax), backpropagation, otimizadores (SGD, Adam, RMSprop), regularização (dropout, batch norm), redes convolucionais (CNN) para visão computacional (LeNet, AlexNet, ResNet), redes recorrentes (RNN, LSTM, GRU), introdução a Transformers e atenção. Frameworks: PyTorch e/ou TensorFlow/Keras. Trabalho prático: treinar uma CNN para classificação de imagens e uma rede sequencial para texto."
+  },
+  {
+    "source": "disciplinas-5-semestre.md",
+    "section": "BD NoSQL (5º) — Banco de Dados NoSQL Avançado",
+    "content": "[BD NoSQL (5º) — Banco de Dados NoSQL Avançado]\nCarga: 75h. Sem pré-requisito. Versão expandida do BDN do 3º semestre. Aprofunda em sharding, replicação, consistência eventual, agregação avançada em MongoDB, Redis (caching, pub/sub, estruturas de dados), Cassandra (modelagem orientada a query), bancos de grafos com Neo4j e Cypher, casos de uso reais (recomendação, redes sociais, IoT)."
+  },
+  {
+    "source": "disciplinas-5-semestre.md",
+    "section": "BI (5º) — Business Intelligence Avançado",
+    "content": "[BI (5º) — Business Intelligence Avançado]\nCarga: 75h. Sem pré-requisito. Continuação aprofundada de BI: BI self-service, governança de dados, certificação de métricas, integração com cloud (Azure Synapse, AWS QuickSight, GCP Looker Studio), automação de relatórios, comunicação executiva."
+  },
+  {
+    "source": "disciplinas-5-semestre.md",
+    "section": "PI I — Projeto Integrador I",
+    "content": "[PI I — Projeto Integrador I]\nCarga: 90h. Sem pré-requisito formal. Primeiro grande projeto interdisciplinar do curso. Os alunos trabalham em equipe sobre um problema real, definindo escopo, dataset, metodologia, executando o projeto e apresentando em banca. Integra conhecimentos de programação, banco de dados, BI, ML e visualização. Avaliação: entregas parciais + apresentação final em banca de professores."
+  },
+  {
+    "source": "disciplinas-6-semestre.md",
+    "section": "APS — Análise e Projeto de Sistemas",
+    "content": "[APS — Análise e Projeto de Sistemas]\nCarga: 75h. Sem pré-requisito. Análise estruturada e orientada a objetos, modelagem com UML completa (casos de uso, classes, sequência, atividades, estados, componentes, implantação), padrões de projeto avançados (Strategy, Observer, Adapter, Decorator), arquitetura em camadas, microserviços vs monolito, princípios SOLID. Voltado a estruturar grandes sistemas — útil para arquitetar projetos de IA escaláveis."
+  },
+  {
+    "source": "disciplinas-6-semestre.md",
+    "section": "DS IA — Desenvolvimento de Sistemas de IA",
+    "content": "[DS IA — Desenvolvimento de Sistemas de IA]\nCarga: 75h. Sem pré-requisito. Como colocar IA em produção: serving de modelos com APIs REST/gRPC, MLOps básico (versionamento de modelos com MLflow, monitoramento, retreinamento), containerização com Docker, orquestração com Docker Compose e introdução a Kubernetes, A/B testing de modelos, feature stores, observabilidade (logs, métricas, alertas). Foco prático: pegar um modelo de ML e disponibilizá-lo como serviço escalável."
+  },
+  {
+    "source": "disciplinas-6-semestre.md",
+    "section": "PI II — Projeto Integrador II",
+    "content": "[PI II — Projeto Integrador II]\nCarga: 90h. Pré-req: PI I. Continuação do PI I, com escopo mais ambicioso e exigência maior em qualidade de entrega, documentação técnica e robustez do sistema. Costuma ser onde o aluno escolhe o problema do TCC."
+  },
+  {
+    "source": "disciplinas-6-semestre.md",
+    "section": "VD — Visualização de Dados",
+    "content": "[VD — Visualização de Dados]\nCarga: 75h. Sem pré-requisito. Princípios de design visual aplicados a dados (Tufte, Cleveland, Wilkinson), gramática dos gráficos (ggplot, plotnine), bibliotecas Python (Matplotlib, Seaborn, Plotly), dashboards interativos (Dash, Streamlit), storytelling com dados, escolha do gráfico certo para cada tipo de mensagem (comparação, distribuição, correlação, evolução temporal, parte-todo), visualização de redes e dados geoespaciais."
+  },
+  {
+    "source": "disciplinas-7-semestre.md",
+    "section": "ED — Engenharia de Dados",
+    "content": "[ED — Engenharia de Dados]\nCarga: 75h. Sem pré-requisito formal. Construção de pipelines de dados em produção: ingestão (batch e streaming), transformação (Spark, dbt), armazenamento (data lake, data warehouse, lakehouse), orquestração (Airflow, Prefect, Dagster), qualidade de dados (testes, monitoramento de drift, contratos de dados), modelagem dimensional revisitada com lentes modernas, ferramentas de cloud (Snowflake, Databricks, BigQuery, Redshift). É a disciplina que ensina a sustentar dados confiáveis para os modelos de ML rodarem em cima."
+  },
+  {
+    "source": "disciplinas-7-semestre.md",
+    "section": "PLN — Processamento de Linguagem Natural",
+    "content": "[PLN — Processamento de Linguagem Natural]\nCarga: 75h. Sem pré-requisito formal. Introdução ao NLP, pré-processamento textual (tokenização, stemming, lematização, POS tagging, NER), representações clássicas (bag of words, TF-IDF, n-grams), embeddings densos (Word2Vec, GloVe, FastText), modelos sequenciais (RNN, LSTM aplicadas a texto), Transformers (atenção, BERT, GPT), tarefas comuns (classificação de texto, análise de sentimento, NER, sumarização, tradução, perguntas e respostas, RAG), bibliotecas (NLTK, spaCy, Hugging Face Transformers). Disciplina diretamente relevante para construir o tipo de chatbot acadêmico que este sistema é."
+  },
+  {
+    "source": "disciplinas-7-semestre.md",
+    "section": "PI III — Projeto Integrador III",
+    "content": "[PI III — Projeto Integrador III]\nCarga: 90h. Pré-req: PI II. O TCC de fato. Projeto final do curso, com defesa em banca, documentação técnica completa, avaliação por métricas robustas. É aqui que o aluno demonstra autonomia plena para conduzir um projeto de Ciência de Dados do início ao fim."
+  },
+  {
+    "source": "disciplinas-7-semestre.md",
+    "section": "SD — Segurança de Dados",
+    "content": "[SD — Segurança de Dados]\nCarga: 75h. Sem pré-requisito formal. Anonimização e pseudonimização, k-anonimato, l-diversidade, t-closeness, privacidade diferencial, federated learning, homomorfismo, gestão de segredos, controle de acesso a dados sensíveis, cumprimento de LGPD/GDPR/HIPAA, auditoria, gestão de riscos, segurança em pipelines e modelos (data poisoning, model stealing, adversarial attacks)."
+  },
+  {
+    "source": "grade-curricular.md",
+    "section": "Visão geral",
+    "content": "[Visão geral]\nO curso tem 7 semestres (3,5 anos), com disciplinas organizadas em uma trilha que vai de fundamentos matemáticos e de programação até temas avançados como Deep Learning, Engenharia de Dados e Processamento de Linguagem Natural. Há quatro Bootcamps e três Projetos Integradores ao longo do curso, voltados à prática integrada."
+  },
+  {
+    "source": "grade-curricular.md",
+    "section": "1º Semestre",
+    "content": "[1º Semestre]\nDisciplinas: Álgebra Linear e Geometria Analítica (ALGA, 60h), Banco de Dados I (BDI, 60h), Bootcamp I (BOOTI, 75h), Engenharia de Software (ES, 60h), Introdução à Ciência de Dados (ICD, 60h), Lógica de Programação (LP, 60h). Pré-requisitos: nenhum. Foco em fundamentos matemáticos, lógicos e introdução ao mundo da Ciência de Dados."
+  },
+  {
+    "source": "grade-curricular.md",
+    "section": "2º Semestre",
+    "content": "[2º Semestre]\nDisciplinas: Banco de Dados II (BDII, 60h, pré-req: BDI), Business Intelligence I (BII, 60h), Cálculo para Computação (CC, 60h), Desenvolvimento para Ciência de Dados I (DCDI, 60h, pré-req: LP), Fundamentos de Segurança Cibernética (FSC, 60h). Aprofundamento em SQL avançado, primeiras técnicas de BI, cálculo aplicado e desenvolvimento em Python para dados."
+  },
+  {
+    "source": "grade-curricular.md",
+    "section": "3º Semestre",
+    "content": "[3º Semestre]\nDisciplinas: Banco de Dados NoSQL (BDN, 60h, pré-req: BDI), Bootcamp II (BOOTII, 75h), Business Intelligence II (BIII, 60h, pré-req: BII), Desenvolvimento para Ciência de Dados II (DCDII, 60h, pré-req: DCDI), Estruturas para Ciência de Dados (ECD, 60h, pré-req: DCDI), Probabilidade e Estatística (PE, 60h). Início efetivo da modelagem estatística e de bancos não relacionais."
+  },
+  {
+    "source": "grade-curricular.md",
+    "section": "4º Semestre",
+    "content": "[4º Semestre]\nDisciplinas: Aprendizagem de Máquina (AMML, 75h, pré-req: IA), Fundamentos de Big Data (FBD, 75h), Otimização Aplicada à Ciência de Dados (OACD, 75h), Recuperação da Informação (RI, 75h). Núcleo de Machine Learning começa formalmente. RI cobre busca textual, indexação invertida, TF-IDF, BM25 — base teórica para sistemas de busca e RAG."
+  },
+  {
+    "source": "grade-curricular.md",
+    "section": "5º Semestre",
+    "content": "[5º Semestre]\nDisciplinas: Aprendizagem Profunda (APDL, 75h, pré-req: AMML), Banco de Dados NoSQL avançado (BD NoSQL, 75h), Business Intelligence (BI, 75h), Projeto Integrador I (PI I, 90h). Deep Learning com redes convolucionais, recorrentes e Transformers. PI I é o primeiro grande projeto interdisciplinar."
+  },
+  {
+    "source": "grade-curricular.md",
+    "section": "6º Semestre",
+    "content": "[6º Semestre]\nDisciplinas: Análise e Projeto de Sistemas (APS, 75h), Desenvolvimento de Sistemas de IA (DS IA, 75h), Projeto Integrador II (PI II, 90h, pré-req: PI I), Visualização de Dados (VD, 75h). Construção de sistemas de IA em produção e técnicas modernas de visualização."
+  },
+  {
+    "source": "grade-curricular.md",
+    "section": "7º Semestre",
+    "content": "[7º Semestre]\nDisciplinas: Engenharia de Dados (ED, 75h), Processamento de Linguagem Natural (PLN, 75h), Projeto Integrador III (PI III, 90h, pré-req: PI II), Segurança de Dados (SD, 75h). Pipelines de dados em produção, NLP avançado (incluindo embeddings, transformers, RAG), e aspectos de segurança e privacidade."
+  },
+  {
+    "source": "grade-curricular.md",
+    "section": "Mapa de pré-requisitos",
+    "content": "[Mapa de pré-requisitos]\nLP → DCDI → DCDII; LP → DCDI → ECD; BDI → BDII; BDI → BDN; BII → BIII; AMML → APDL; PI I → PI II → PI III. IA é pré-requisito de AMML (no 4º semestre). Disciplinas sem pré-requisito podem ser cursadas a qualquer momento que a grade permita, respeitando o semestre indicado como sugerido."
+  },
+  {
+    "source": "grade-curricular.md",
+    "section": "Trilhas temáticas",
+    "content": "[Trilhas temáticas]\nTrilha de dados: BDI → BDII → BDN → ED. Trilha de programação: LP → DCDI → DCDII → ECD → DS IA. Trilha estatística/ML: PE → AMML → APDL → PLN. Trilha de produto: ICD → BII → BIII → BI → VD → PI I/II/III. Bootcamps (BOOTI, BOOTII) reforçam habilidades práticas multidisciplinares."
+  },
+  {
+    "source": "institucional.md",
+    "section": "Sobre o curso",
+    "content": "[Sobre o curso]\nO curso de Ciência de Dados e Machine Learning (Inteligência Artificial) do CEUB é um bacharelado com duração de 3,5 anos (7 semestres). É voltado para formar profissionais capazes de trabalhar com mineração de dados, arquitetura de dados, análise de dados e desenvolvimento de soluções em inteligência artificial. O curso responde à crescente demanda por profissionais qualificados em Big Data, Machine Learning e IA aplicada."
+  },
+  {
+    "source": "institucional.md",
+    "section": "Perfil do egresso",
+    "content": "[Perfil do egresso]\nO egresso é um profissional com competência técnica para coletar, processar, armazenar e analisar grandes volumes de dados, aplicar técnicas de aprendizado de máquina e aprendizagem profunda, construir sistemas de recomendação, desenvolver pipelines de engenharia de dados, projetar sistemas de IA, comunicar resultados por meio de visualização de dados e atuar com responsabilidade ética no tratamento de dados."
+  },
+  {
+    "source": "institucional.md",
+    "section": "Campus",
+    "content": "[Campus]\nAsa Norte, Brasília-DF."
+  },
+  {
+    "source": "institucional.md",
+    "section": "Carga horária",
+    "content": "[Carga horária]\nDisciplinas regulares: 60 a 90 horas. Bootcamps e Projetos Integradores: 75 a 90 horas. A carga horária total do curso supera 2.400 horas distribuídas em 7 semestres."
+  },
+  {
+    "source": "institucional.md",
+    "section": "Sistema de avaliação",
+    "content": "[Sistema de avaliação]\nA nota final em cada disciplina é geralmente composta pela média ponderada de avaliações ao longo do semestre. A média mínima para aprovação é 7,0 (sete) na escala de 0 a 10. Quando o aluno fica entre 4,0 e 6,9, normalmente faz prova final, e a média entre nota do semestre e prova final precisa ser igual ou superior a 5,0 para aprovação. Abaixo de 4,0 o aluno é reprovado por nota."
+  },
+  {
+    "source": "institucional.md",
+    "section": "Frequência mínima",
+    "content": "[Frequência mínima]\nA frequência mínima exigida é de 75% da carga horária da disciplina, conforme a LDB. Em uma disciplina de 60h, isso equivale a no máximo 15h de faltas (cerca de 7 a 8 aulas). Em disciplinas de 75h, no máximo 18,75h de faltas. Em disciplinas de 90h (Projetos Integradores), no máximo 22,5h. Reprovação por falta (RF) ocorre quando o aluno ultrapassa esse limite, independentemente das notas obtidas."
+  },
+  {
+    "source": "institucional.md",
+    "section": "Calendário acadêmico",
+    "content": "[Calendário acadêmico]\nO ano letivo se divide em dois semestres. O primeiro semestre inicia geralmente no início de fevereiro e se encerra em junho/julho. O segundo semestre vai de agosto a dezembro. Há semana de provas ao final de cada semestre, recesso entre semestres, e período de matrícula online realizado pelo aluno via portal."
+  },
+  {
+    "source": "institucional.md",
+    "section": "Matrícula",
+    "content": "[Matrícula]\nA matrícula em disciplinas é feita semestralmente pelo portal do aluno. O aluno deve respeitar pré-requisitos: para cursar uma disciplina é necessário ter sido aprovado nas suas pré-requisitos. O CEUB também permite, em alguns casos, aproveitamento de disciplinas cursadas em outras instituições, mediante análise de coordenação."
+  },
+  {
+    "source": "institucional.md",
+    "section": "Suporte ao aluno",
+    "content": "[Suporte ao aluno]\nO CEUB oferece atendimento via Central do Aluno, plataforma virtual de aprendizagem, monitoria em disciplinas selecionadas, atendimento psicopedagógico, biblioteca física e digital, e laboratórios de informática com softwares específicos para o curso (R, Python, Power BI, ferramentas de banco de dados e cloud)."
+  },
+  {
+    "source": "processos-academicos.md",
+    "section": "Aprovação por nota",
+    "content": "[Aprovação por nota]\nPara ser aprovado em uma disciplina, o aluno precisa obter média final igual ou superior a 7,0 ao longo do semestre. Médias entre 4,0 e 6,9 levam o aluno a fazer Prova Final (PF). A média entre a nota do semestre e a PF deve ser igual ou superior a 5,0 para aprovação. Médias inferiores a 4,0 resultam em reprovação direta por nota (RN)."
+  },
+  {
+    "source": "processos-academicos.md",
+    "section": "Aprovação por frequência",
+    "content": "[Aprovação por frequência]\nIndependentemente da nota, o aluno precisa ter pelo menos 75% de presença na carga horária da disciplina. Em uma disciplina de 60h, isso permite até 15 horas de faltas. Em 75h, até 18,75h. Em 90h, até 22,5h. Faltas excedentes geram Reprovação por Falta (RF), e a nota da disciplina é descartada nesse caso."
+  },
+  {
+    "source": "processos-academicos.md",
+    "section": "Trancamento de matrícula",
+    "content": "[Trancamento de matrícula]\nO aluno pode trancar a matrícula em uma disciplina específica ou no semestre inteiro, desde que respeite o prazo definido no calendário acadêmico (geralmente até a metade do semestre). Trancamento de disciplina não reprova, mas o aluno precisará cursá-la em semestre futuro. Há limite de trancamentos consecutivos."
+  },
+  {
+    "source": "processos-academicos.md",
+    "section": "Aproveitamento de disciplinas",
+    "content": "[Aproveitamento de disciplinas]\nAlunos que cursaram disciplinas equivalentes em outras instituições podem solicitar aproveitamento à coordenação do curso, apresentando histórico, ementa e plano de ensino da disciplina cursada. A análise considera carga horária, conteúdo programático e bibliografia. Disciplinas aproveitadas são registradas no histórico como \"AP\"."
+  },
+  {
+    "source": "processos-academicos.md",
+    "section": "Estágio supervisionado",
+    "content": "[Estágio supervisionado]\nO estágio é uma prática profissional supervisionada que integra o aprendizado acadêmico ao ambiente real de trabalho. No CEUB, é geralmente realizado a partir do 5º ou 6º semestre. Pode ser obrigatório ou não obrigatório, conforme o projeto pedagógico. Requer convênio entre instituição e empresa, plano de atividades aprovado e relatório final."
+  },
+  {
+    "source": "processos-academicos.md",
+    "section": "Trabalho de Conclusão de Curso (TCC)",
+    "content": "[Trabalho de Conclusão de Curso (TCC)]\nNo formato de Projeto Integrador, o curso de Ciência de Dados e ML do CEUB integra etapas de TCC nas disciplinas de Projeto Integrador I (5º), II (6º) e III (7º). Cada projeto é supervisionado por um professor orientador, deve ter problema definido, dataset, metodologia, experimentos com métricas e defesa final em banca. PI III é o equivalente ao TCC final."
+  },
+  {
+    "source": "processos-academicos.md",
+    "section": "Atividades complementares",
+    "content": "[Atividades complementares]\nCursos extras, palestras, monitorias, eventos científicos e competições (hackathons, Kaggle) podem ser registrados como atividades complementares. O aluno deve apresentar comprovantes à coordenação para registrar essas horas no histórico."
+  },
+  {
+    "source": "processos-academicos.md",
+    "section": "Calendário típico do semestre",
+    "content": "[Calendário típico do semestre]\nInício das aulas: primeira semana letiva. Avaliações parciais (P1, P2): geralmente uma na metade e outra ao fim do semestre. Trabalhos e listas: ao longo do semestre. Semana de provas finais: última semana de aulas. Recesso: entre semestres. Matrícula online para o próximo semestre: aproximadamente 30 dias antes do início."
+  },
+  {
+    "source": "processos-academicos.md",
+    "section": "Como solicitar 2ª chamada",
+    "content": "[Como solicitar 2ª chamada]\nEm caso de falta justificada (atestado médico, motivo legal), o aluno pode solicitar 2ª chamada da prova via portal acadêmico, anexando documentação. Há prazo de até 5 dias úteis após a data da prova original para abertura da solicitação."
+  },
+  {
+    "source": "processos-academicos.md",
+    "section": "Plano de estudos sugerido",
+    "content": "[Plano de estudos sugerido]\nPara acompanhar bem o curso, recomenda-se estudo regular de cerca de 4 horas por semana por disciplina fora da sala de aula, revisão semanal dos conteúdos vistos, prática constante de programação (Python, SQL) e leitura da bibliografia complementar indicada pelos professores."
+  }
+]
