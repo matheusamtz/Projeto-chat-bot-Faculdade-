@@ -13,48 +13,90 @@ Assistente acadêmico que combina **busca semântica (RAG)** sobre o conteúdo d
   └────────┬─────────┘
            │ POST /api/chat
            ▼
-  ┌──────────────────┐       ┌────────────────────┐
-  │     app.py       │──────▶│  embeddings.npy    │  (RAG)
-  │   (Flask)        │       │  chunks.json       │
-  │                  │──────▶│  student.db        │  (dados do aluno)
-  └────────┬─────────┘       └────────────────────┘
-           │ SSE stream
+  ┌──────────────────────────────────────────────────────┐
+  │                       app.py                         │
+  │  (orquestrador Flask — usa módulos do pacote core/)  │
+  │                                                      │
+  │  1) IntentClassifier ──► conteudo|calendario|hibrido │
+  │  2) VectorStore       ──► top-5 chunks (busca híbrida│
+  │                           semântica + TF-IDF, α=0.4) │
+  │  3) StudentData       ──► matrículas/notas/freq      │
+  │  4) LLM stream        ──► OpenRouter (SSE)           │
+  └────────┬─────────────────────────────────────────────┘
+           │
            ▼
-       LLM via OpenRouter (gpt-4o-mini, llama-3.3, etc.)
+  data/intent_classifier.joblib  (sklearn pipeline treinado)
+  data/embeddings.npy            (NumPy 62×384, normalizado)
+  data/chunks.json               (62 chunks com metadados)
+  data/student.db                (SQLite com aluno)
 ```
 
-A geração de embeddings roda **localmente** com `sentence-transformers` (modelo multilingual, sem custo, sem API). O **chat** usa qualquer provedor compatível com a API da OpenAI — o `.env` já vem configurado para **OpenRouter**.
+**Roteamento por classificador de intenção** — a cada pergunta, um modelo treinado (TF-IDF + Logistic Regression) classifica a intenção em uma de três categorias e decide o que injetar no contexto: só RAG (`conteudo`), só dados estruturados (`calendario`) ou ambos (`hibrido`). Isso reduz tokens e foca a resposta. F1-macro medido na cross-validation: **0.8652**.
 
-Fluxo de uma mensagem: o backend gera o embedding da pergunta localmente, busca os trechos mais similares na base de conhecimento (busca vetorial em memória com numpy), monta um contexto com **dados estruturados do aluno** (matrículas, próximas atividades, notas, frequência) somados aos **trechos recuperados**, e chama o LLM com streaming. A resposta volta token a token via Server-Sent Events.
+**Busca híbrida (semântica + lexical)** — o retrieval combina o cosseno dos embeddings com um cosseno TF-IDF: `score = 0.4·semântico + 0.6·lexical`. O peso foi escolhido por sweep sobre o test set anotado e dá um salto grande sobre qualquer abordagem pura (MRR 0.76 → **0.96**). Em corpus pequeno com vocabulário técnico distintivo, o lexical acerta termos exatos ("produto escalar", "INNER JOIN") e o semântico cobre paráfrases.
+
+**Embeddings locais** — `sentence-transformers` (multilingual, sem custo, sem API). O chat usa qualquer provedor OpenAI-compatible — o `.env` já vem com OpenRouter.
+
+**Fluxo:** classifica → busca RAG e/ou SQL conforme intenção → monta o prompt (system + contexto + histórico + pergunta) → chama LLM com streaming → frontend renderiza tokens em tempo real via SSE.
 
 ## Stack
 
-- **Python + Flask** — backend
+- **Python + Flask** — backend e orquestrador
 - **sentence-transformers** — embeddings locais (`paraphrase-multilingual-MiniLM-L12-v2`, 384 dim, ~120MB)
-- **OpenRouter (cliente OpenAI compatível)** — LLM para gerar respostas (chat)
+- **scikit-learn + joblib** — classificador de intenção (TF-IDF + Logistic Regression)
+- **OpenRouter (cliente OpenAI-compatible)** — LLM para gerar respostas
 - **NumPy** — busca vetorial em memória (cosseno via produto interno)
 - **SQLite** — dados estruturados do aluno
-- **HTML + JS vanilla + marked.js** — frontend sem build step
+- **HTML + CSS + JS vanilla** — frontend sem build step (marked.js + DOMPurify para markdown seguro, highlight.js para código, KaTeX para fórmulas)
 
 ## Estrutura
 
 ```
 .
-├── app.py                  # backend Flask (rotas /, /api/student, /api/chat)
-├── ingest.py               # gera embeddings da base de conhecimento
-├── embeddings.py           # camada de embeddings (local ou OpenAI)
-├── seed_db.py              # cria e popula o SQLite do aluno
-├── requirements.txt
-├── .env                    # config real (NÃO comitar — está no .gitignore)
-├── .env.example            # template documentado
-├── data/
-│   ├── knowledge/          # base de conhecimento (.md, um por semestre + institucional)
-│   ├── chunks.json         # gerado por ingest.py
-│   ├── embeddings.npy      # gerado por ingest.py
-│   └── student.db          # gerado por seed_db.py
-└── templates/
-    └── index.html          # UI completa (CSS + JS embutidos)
+├── app.py                              # backend Flask (rotas /, /api/student, /api/intent, /api/chat, /api/health)
+├── ingest.py                           # gera chunks e embeddings da base de conhecimento
+├── seed_db.py                          # cria e popula o SQLite do aluno
+├── requirements.txt                    # dependências
+├── .env / .env.example
+├── core/                               # pacote com lógica de domínio (testável, reutilizável)
+│   ├── chunking.py                     # quebra dos .md em chunks por seção
+│   ├── embeddings.py                   # backends de embedding (local/OpenAI)
+│   ├── vector_store.py                 # busca vetorial em memória (NumPy)
+│   ├── student_data.py                 # camada SQL sobre o SQLite
+│   └── intent_classifier.py            # carrega/usa o classificador treinado
+├── scripts/                            # scripts de manutenção e avaliação
+│   ├── train_intent_classifier.py      # treina + mostra F-score do classificador
+│   ├── evaluate_retrieval.py           # mede P@k, R@k, F1@k, MRR do RAG semântico
+│   └── baseline_tfidf_retrieval.py     # baseline TF-IDF puro p/ comparação
+├── evaluation_data/                    # datasets anotados (ground truth)
+│   ├── intent_dataset.json             # 159 queries rotuladas (conteudo/calendario/hibrido)
+│   └── retrieval_test_set.json         # 22 queries com fontes relevantes anotadas
+├── data/                               # artefatos gerados (estão no .gitignore exceto se for deploy)
+│   ├── knowledge/                      # .md institucional + grade + 7 semestres
+│   ├── chunks.json                     # 62 chunks com metadados
+│   ├── embeddings.npy                  # matriz [62 × 384] normalizada
+│   ├── student.db                      # banco do aluno
+│   ├── intent_classifier.joblib        # pipeline sklearn treinado
+│   ├── intent_metrics.json             # F-score do classificador
+│   └── retrieval_metrics_tfidf.json    # métricas do baseline TF-IDF
+├── templates/
+│   └── index.html                      # markup da UI (sem build step)
+└── static/
+    ├── style.css                       # tema dark premium (tokens, glass, responsivo)
+    └── app.js                          # streaming SSE, markdown sanitizado, KaTeX, persistência local
 ```
+
+## Frontend
+
+UI dark premium em vanilla JS, sem build step:
+
+- **Streaming token a token** com indicador de digitação e botão de **parar geração**
+- **Badge de intenção** em cada resposta (qual rota o classificador escolheu + confiança)
+- **Fontes consultadas** com barra de similaridade por chunk
+- **Markdown sanitizado** (DOMPurify contra XSS), **código com highlight** + botão copiar, **fórmulas LaTeX** renderizadas com KaTeX
+- **Histórico persistido** em localStorage (sobrevive ao F5) + botão "Nova conversa"
+- **Responsivo**: sidebar vira drawer no mobile; suporta `prefers-reduced-motion`
+- Tratamento de erro com **botão "tentar de novo"**
 
 ## Setup (passo a passo)
 
@@ -96,7 +138,24 @@ python ingest.py
 
 Na primeira execução, ele baixa o modelo de embedding (~120MB) automaticamente. Depois é instantâneo. **Custo zero** (tudo roda na sua máquina).
 
-### 5. Rode o servidor
+### 5. Treine o classificador de intenção
+
+```bash
+python scripts/train_intent_classifier.py
+```
+
+Roda em ~3 segundos. Imprime o **F1-macro**, relatório por classe e matriz de confusão, e salva o modelo em `data/intent_classifier.joblib`. Se você pular esse passo, o `app.py` ainda sobe — só desliga o roteamento e cai num modo "injeta tudo".
+
+### 6. (opcional) Avalie o retrieval
+
+```bash
+python scripts/baseline_tfidf_retrieval.py    # baseline TF-IDF (não precisa de embeddings)
+python scripts/evaluate_retrieval.py          # com embeddings semânticos (depende do ingest)
+```
+
+Imprime precision@k, recall@k, F1@k e MRR sobre o conjunto de teste anotado em `evaluation_data/retrieval_test_set.json`.
+
+### 7. Rode o servidor
 
 ```bash
 python app.py
@@ -122,13 +181,55 @@ Abra http://localhost:5000
 - "qual matéria tô pior e o que estudar?"
 - "minha próxima prova de BDI cobre o que?"
 
+## Avaliação do sistema
+
+O projeto inclui dois pipelines de avaliação independentes — um para o classificador de intenção, outro para a qualidade do retrieval. Ambos imprimem relatórios no terminal e salvam JSON com as métricas para uso em relatórios.
+
+### Classificador de intenção (TF-IDF + Logistic Regression)
+
+- **Dataset:** 159 queries em PT-BR rotuladas em três classes (`conteudo` n=56, `calendario` n=50, `hibrido` n=53).
+- **Avaliação:** 5-fold stratified cross-validation.
+- **Resultados medidos:**
+
+  | Métrica | Valor |
+  |---|---|
+  | Acurácia | 0.8679 |
+  | **F1-macro** | **0.8652** |
+  | F1-weighted | 0.8683 |
+
+- **F1 por classe:**
+
+  | Classe | Precision | Recall | F1 | Suporte |
+  |---|---|---|---|---|
+  | `conteudo`  | 0.9818 | 0.9643 | 0.9730 | 56 |
+  | `calendario` | 0.8636 | 0.7600 | 0.8085 | 50 |
+  | `hibrido`   | 0.7667 | 0.8679 | 0.8142 | 53 |
+
+- **Matriz de confusão:** a maior confusão acontece entre `calendario` e `hibrido` — esperado, porque a fronteira é tênue: "qual minha nota?" é puro calendário, "qual minha nota e o que estudar?" já é híbrido.
+
+### Retrieval do RAG — lexical vs semântico vs híbrido
+
+Sobre as mesmas 22 queries anotadas com fontes relevantes (`scripts/baseline_tfidf_retrieval.py` e `scripts/evaluate_retrieval.py`):
+
+| Abordagem | P@1 | R@5 | MRR |
+|---|---|---|---|
+| TF-IDF puro (baseline lexical) | 0.7727 | 0.9621 | 0.8674 |
+| Semântico puro (MiniLM multilingual) | 0.6818 | 0.8409 | 0.7614 |
+| **Híbrido α=0.4 (produção)** | **0.9545** | **0.9773** | **0.9636** |
+
+Leitura dos números — e o achado central da avaliação:
+
+- O **semântico puro perde para o baseline lexical** neste corpus: a base é pequena (62 chunks) e cheia de termos técnicos distintivos ("produto escalar", "INNER JOIN", "CRISP-DM") que o TF-IDF acerta de forma exata, enquanto o MiniLM multilingual dilui esses termos no espaço vetorial.
+- A **combinação dos dois é muito melhor que qualquer um isolado**: P@1 sai de ~0.7 para 0.95 e o MRR para 0.96 (primeiro hit em média na posição ~1.04). O `alpha` foi varrido em {0 … 1} e o platô 0.3–0.7 é estável — 0.4 é o ponto usado em produção (`app.py`).
+- Esse é exatamente o resultado clássico de hybrid retrieval (denso + esparso) da literatura, reproduzido e medido no projeto — material forte para o relatório.
+
 ## Como expandir
 
 Algumas linhas de evolução fáceis de implementar:
 
-- **Persistir o histórico** das conversas em uma tabela `conversas` no SQLite
-- **Re-ranking** com `gpt-4o-mini` após o top-20 da busca vetorial, pegando os top-3 finais
-- **Métricas de avaliação** do RAG (precision@k, MRR) com um conjunto fixo de perguntas anotadas — bom material para TCC
+- **Persistir o histórico** das conversas em uma tabela `conversas` no SQLite (hoje fica no localStorage do navegador)
+- **Re-ranking** com `gpt-4o-mini` após o top-20 da busca híbrida, pegando os top-3 finais
+- **BM25 no lugar do TF-IDF** na perna lexical da busca híbrida (rank_bm25), e comparar no mesmo test set
 - **Comparar modelos de embedding** (`MiniLM` vs `multilingual-e5-large` vs `BGE-M3`)
 - **Migrar para pgvector** quando a base crescer (vários alunos, vários semestres acumulados)
 - **Adicionar autenticação** para múltiplos alunos
@@ -139,100 +240,4 @@ Algumas linhas de evolução fáceis de implementar:
 Se quiser usar embeddings da OpenAI em vez dos locais (mais qualidade, ~R$ 0,05 por ingest), edite o `.env`:
 
 ```
-EMBEDDING_BACKEND=openai
-OPENAI_EMBEDDING_API_KEY=sk-...           # chave OpenAI direta
-OPENAI_EMBEDDING_BASE_URL=https://api.openai.com/v1
-OPENAI_EMBEDDING_MODEL=text-embedding-3-small
-```
-
-Depois rode `python ingest.py` de novo para regerar os embeddings.
-
-## Custo estimado (config atual)
-
-- Embeddings: **R$ 0** (rodam local)
-- Por mensagem: ~R$ 0,002 com `gpt-4o-mini` no OpenRouter (~3.000 tokens de contexto)
-- 100 mensagens/dia ≈ R$ 0,20/dia ≈ R$ 6/mês
-- Com `meta-llama/llama-3.3-70b-instruct:free`: **R$ 0** (limitado a alguns rqps)
-
-## Deploy na Vercel
-
-A Vercel roda Python como **funções serverless** (limite de 250 MB por função). Isso muda duas coisas em relação ao desenvolvimento local:
-
-1. **Embeddings precisam ser via OpenAI** em produção. `sentence-transformers + torch` (~1 GB) estoura o limite. Localmente continua funcionando — o `.vercelignore` mantém `requirements-dev.txt` fora do bundle.
-2. **Os artefatos `data/student.db`, `data/chunks.json` e `data/embeddings.npy` precisam estar no repositório** no momento do deploy — eles são o "build" da base de conhecimento.
-
-### 1) Pré-requisitos locais (uma única vez antes do primeiro deploy)
-
-Você precisa de uma chave **real da OpenAI** (a do OpenRouter não serve para embeddings). Crie em https://platform.openai.com/api-keys.
-
-No seu `.env` local, ajuste para gerar embeddings via OpenAI (a dimensão muda de 384 → 1536, então **tem que regerar**):
-
-```env
-EMBEDDING_BACKEND=openai
-OPENAI_EMBEDDING_API_KEY=sk-...                 # chave OpenAI direta
-OPENAI_EMBEDDING_BASE_URL=https://api.openai.com/v1
-OPENAI_EMBEDDING_MODEL=text-embedding-3-small
-```
-
-Depois rode:
-
-```bash
-pip install -r requirements.txt        # base (Flask, numpy, openai). Nao precisa de sentence-transformers para ingest via OpenAI.
-python seed_db.py                       # gera data/student.db
-python ingest.py                        # gera data/chunks.json e data/embeddings.npy via OpenAI
-```
-
-Custo do ingest: ~R$ 0,03 (≈ 30k tokens em `text-embedding-3-small`).
-
-### 2) Suba para um repositório Git
-
-```bash
-git init
-git add .
-git commit -m "deploy inicial"
-git remote add origin <url-do-seu-repo>
-git push -u origin main
-```
-
-> O `.gitignore` já protege o `.env`. Os arquivos `data/student.db`, `data/chunks.json` e `data/embeddings.npy` **vão** para o repo de propósito — são os artefatos consumidos em runtime.
-
-### 3) Importe na Vercel
-
-- Em https://vercel.com/new, importe o repositório.
-- **Framework Preset:** "Other" (a Vercel detecta o `vercel.json` e o runtime Python automaticamente).
-- **Build/Output:** deixar em branco. O `vercel.json` cuida de tudo.
-
-### 4) Configure as variáveis de ambiente no painel da Vercel
-
-Em **Project Settings → Environment Variables**, adicione:
-
-| Variável | Valor | Obs |
-|---|---|---|
-| `OPENAI_API_KEY` | `sk-or-v1-...` | sua chave OpenRouter (ou OpenAI direta) para o **chat** |
-| `OPENAI_BASE_URL` | `https://openrouter.ai/api/v1` | ou `https://api.openai.com/v1` |
-| `CHAT_MODEL` | `openai/gpt-4o-mini` | ou outro suportado pelo provedor |
-| `EMBEDDING_BACKEND` | `openai` | **obrigatório** — backend local não cabe na Vercel |
-| `OPENAI_EMBEDDING_API_KEY` | `sk-...` | chave **OpenAI direta** (OpenRouter não atende `/embeddings` igualzinho) |
-| `OPENAI_EMBEDDING_BASE_URL` | `https://api.openai.com/v1` | |
-| `OPENAI_EMBEDDING_MODEL` | `text-embedding-3-small` | precisa bater com o modelo usado no ingest |
-
-### 5) Deploy
-
-Clique em "Deploy" — ou faça push e a Vercel deploya sozinha.
-
-### Limitações conhecidas em serverless
-
-- **Streaming SSE**: o runtime `@vercel/python` (AWS Lambda) tende a **bufferizar** a resposta. O front continua funcionando, mas a resposta chega "de uma vez" em vez de token a token. Se o streaming real for crítico, considere migrar essa rota para Edge Functions (Node) ou hospedar em Render/Fly.io/Railway.
-- **Cold start**: a primeira requisição depois de ociosidade carrega `embeddings.npy` em memória — pode levar 2–4s. Requisições seguintes são instantâneas.
-- **Filesystem read-only**: o SQLite é apenas lido (nada de gravar histórico no `student.db` em produção). Para persistir conversas, use Vercel Postgres / Neon / Turso.
-- **Tamanho da função**: o bundle final fica em ~10 MB (Flask + numpy + openai + dados). Confortavelmente abaixo do limite.
-
-### Alternativa: deploy em outras plataformas
-
-Se quiser **manter os embeddings locais** (sem custo de OpenAI) e **streaming real**, plataformas com containers de longa duração funcionam melhor:
-
-- **Render.com** (free tier, suporta o `requirements-dev.txt` inteiro)
-- **Fly.io** (Dockerfile)
-- **Railway** (idem)
-
-Nesses casos, basta `python app.py` rodando no container — sem precisar de `vercel.json`/`api/index.py`.
+E

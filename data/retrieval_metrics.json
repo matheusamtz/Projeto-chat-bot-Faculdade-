@@ -1,0 +1,1369 @@
+{
+  "aggregate": {
+    "n_queries": 22,
+    "P@1": 0.6818181818181818,
+    "R@1": 0.5833333333333334,
+    "F1@1": 0.6136363636363636,
+    "P@3": 0.40909090909090906,
+    "R@3": 0.7803030303030303,
+    "F1@3": 0.5015151515151515,
+    "P@5": 0.33636363636363636,
+    "R@5": 0.8409090909090909,
+    "F1@5": 0.44498556998557,
+    "MRR": 0.7613636363636364
+  },
+  "per_query": [
+    {
+      "query": "o que e produto escalar e como calcular",
+      "relevant_sources": [
+        "disciplinas-1-semestre.md"
+      ],
+      "retrieved_top5": [
+        "disciplinas-7-semestre.md",
+        "grade-curricular.md",
+        "disciplinas-2-semestre.md",
+        "disciplinas-7-semestre.md",
+        "grade-curricular.md"
+      ],
+      "scores_top5": [
+        0.469,
+        0.465,
+        0.451,
+        0.449,
+        0.442
+      ],
+      "P@1": 0.0,
+      "R@1": 0.0,
+      "F1@1": 0.0,
+      "P@3": 0.0,
+      "R@3": 0.0,
+      "F1@3": 0.0,
+      "P@5": 0.0,
+      "R@5": 0.0,
+      "F1@5": 0.0,
+      "RR": 0.0
+    },
+    {
+      "query": "como funciona normalizacao em banco de dados",
+      "relevant_sources": [
+        "disciplinas-1-semestre.md"
+      ],
+      "retrieved_top5": [
+        "disciplinas-1-semestre.md",
+        "disciplinas-4-semestre.md",
+        "disciplinas-5-semestre.md",
+        "disciplinas-2-semestre.md",
+        "disciplinas-3-semestre.md"
+      ],
+      "scores_top5": [
+        0.616,
+        0.542,
+        0.527,
+        0.468,
+        0.466
+      ],
+      "P@1": 1.0,
+      "R@1": 1.0,
+      "F1@1": 1.0,
+      "P@3": 0.3333333333333333,
+      "R@3": 1.0,
+      "F1@3": 0.5,
+      "P@5": 0.2,
+      "R@5": 1.0,
+      "F1@5": 0.33333333333333337,
+      "RR": 1.0
+    },
+    {
+      "query": "diferenca entre INNER JOIN e LEFT JOIN",
+      "relevant_sources": [
+        "disciplinas-1-semestre.md"
+      ],
+      "retrieved_top5": [
+        "processos-academicos.md",
+        "disciplinas-1-semestre.md",
+        "disciplinas-6-semestre.md",
+        "disciplinas-7-semestre.md",
+        "grade-curricular.md"
+      ],
+      "scores_top5": [
+        0.297,
+        0.271,
+        0.239,
+        0.217,
+        0.205
+      ],
+      "P@1": 0.0,
+      "R@1": 0.0,
+      "F1@1": 0.0,
+      "P@3": 0.3333333333333333,
+      "R@3": 1.0,
+      "F1@3": 0.5,
+      "P@5": 0.2,
+      "R@5": 1.0,
+      "F1@5": 0.33333333333333337,
+      "RR": 0.5
+    },
+    {
+      "query": "o que e CRISP-DM e quais sao suas etapas",
+      "relevant_sources": [
+        "disciplinas-1-semestre.md"
+      ],
+      "retrieved_top5": [
+        "disciplinas-1-semestre.md",
+        "grade-curricular.md",
+        "disciplinas-6-semestre.md",
+        "disciplinas-4-semestre.md",
+        "grade-curricular.md"
+      ],
+      "scores_top5": [
+        0.585,
+        0.449,
+        0.404,
+        0.392,
+        0.391
+      ],
+      "P@1": 1.0,
+      "R@1": 1.0,
+      "F1@1": 1.0,
+      "P@3": 0.3333333333333333,
+      "R@3": 1.0,
+      "F1@3": 0.5,
+      "P@5": 0.2,
+      "R@5": 1.0,
+      "F1@5": 0.33333333333333337,
+      "RR": 1.0
+    },
+    {
+      "query": "como funciona Scrum e metodologia agil",
+      "relevant_sources": [
+        "disciplinas-1-semestre.md"
+      ],
+      "retrieved_top5": [
+        "disciplinas-6-semestre.md",
+        "grade-curricular.md",
+        "disciplinas-7-semestre.md",
+        "grade-curricular.md",
+        "grade-curricular.md"
+      ],
+      "scores_top5": [
+        0.447,
+        0.441,
+        0.44,
+        0.438,
+        0.437
+      ],
+      "P@1": 0.0,
+      "R@1": 0.0,
+      "F1@1": 0.0,
+      "P@3": 0.0,
+      "R@3": 0.0,
+      "F1@3": 0.0,
+      "P@5": 0.0,
+      "R@5": 0.0,
+      "F1@5": 0.0,
+      "RR": 0.0
+    },
+    {
+      "query": "explique estruturas de repeticao em Python",
+      "relevant_sources": [
+        "disciplinas-1-semestre.md"
+      ],
+      "retrieved_top5": [
+        "disciplinas-1-semestre.md",
+        "disciplinas-2-semestre.md",
+        "disciplinas-3-semestre.md",
+        "disciplinas-7-semestre.md",
+        "disciplinas-7-semestre.md"
+      ],
+      "scores_top5": [
+        0.7,
+        0.489,
+        0.417,
+        0.344,
+        0.337
+      ],
+      "P@1": 1.0,
+      "R@1": 1.0,
+      "F1@1": 1.0,
+      "P@3": 0.3333333333333333,
+      "R@3": 1.0,
+      "F1@3": 0.5,
+      "P@5": 0.2,
+      "R@5": 1.0,
+      "F1@5": 0.33333333333333337,
+      "RR": 1.0
+    },
+    {
+      "query": "o que e o teorema CAP em NoSQL",
+      "relevant_sources": [
+        "disciplinas-3-semestre.md"
+      ],
+      "retrieved_top5": [
+        "disciplinas-3-semestre.md",
+        "disciplinas-1-semestre.md",
+        "grade-curricular.md",
+        "disciplinas-4-semestre.md",
+        "disciplinas-5-semestre.md"
+      ],
+      "scores_top5": [
+        0.502,
+        0.396,
+        0.391,
+        0.38,
+        0.379
+      ],
+      "P@1": 1.0,
+      "R@1": 1.0,
+      "F1@1": 1.0,
+      "P@3": 0.3333333333333333,
+      "R@3": 1.0,
+      "F1@3": 0.5,
+      "P@5": 0.2,
+      "R@5": 1.0,
+      "F1@5": 0.33333333333333337,
+      "RR": 1.0
+    },
+    {
+      "query": "como funciona machine learning supervisionado",
+      "relevant_sources": [
+        "disciplinas-4-semestre.md"
+      ],
+      "retrieved_top5": [
+        "disciplinas-4-semestre.md",
+        "grade-curricular.md",
+        "disciplinas-4-semestre.md",
+        "disciplinas-4-semestre.md",
+        "grade-curricular.md"
+      ],
+      "scores_top5": [
+        0.671,
+        0.579,
+        0.489,
+        0.48,
+        0.473
+      ],
+      "P@1": 1.0,
+      "R@1": 1.0,
+      "F1@1": 1.0,
+      "P@3": 0.6666666666666666,
+      "R@3": 1.0,
+      "F1@3": 0.8,
+      "P@5": 0.6,
+      "R@5": 1.0,
+      "F1@5": 0.7499999999999999,
+      "RR": 1.0
+    },
+    {
+      "query": "o que sao redes neurais convolucionais",
+      "relevant_sources": [
+        "disciplinas-5-semestre.md"
+      ],
+      "retrieved_top5": [
+        "disciplinas-5-semestre.md",
+        "grade-curricular.md",
+        "grade-curricular.md",
+        "disciplinas-4-semestre.md",
+        "disciplinas-4-semestre.md"
+      ],
+      "scores_top5": [
+        0.453,
+        0.414,
+        0.375,
+        0.372,
+        0.34
+      ],
+      "P@1": 1.0,
+      "R@1": 1.0,
+      "F1@1": 1.0,
+      "P@3": 0.3333333333333333,
+      "R@3": 1.0,
+      "F1@3": 0.5,
+      "P@5": 0.2,
+      "R@5": 1.0,
+      "F1@5": 0.33333333333333337,
+      "RR": 1.0
+    },
+    {
+      "query": "como funciona TF-IDF e BM25",
+      "relevant_sources": [
+        "disciplinas-4-semestre.md"
+      ],
+      "retrieved_top5": [
+        "disciplinas-2-semestre.md",
+        "disciplinas-4-semestre.md",
+        "disciplinas-2-semestre.md",
+        "disciplinas-1-semestre.md",
+        "disciplinas-6-semestre.md"
+      ],
+      "scores_top5": [
+        0.474,
+        0.444,
+        0.415,
+        0.408,
+        0.373
+      ],
+      "P@1": 0.0,
+      "R@1": 0.0,
+      "F1@1": 0.0,
+      "P@3": 0.3333333333333333,
+      "R@3": 1.0,
+      "F1@3": 0.5,
+      "P@5": 0.2,
+      "R@5": 1.0,
+      "F1@5": 0.33333333333333337,
+      "RR": 0.5
+    },
+    {
+      "query": "qual a frequencia minima exigida no CEUB",
+      "relevant_sources": [
+        "processos-academicos.md",
+        "institucional.md"
+      ],
+      "retrieved_top5": [
+        "institucional.md",
+        "institucional.md",
+        "institucional.md",
+        "processos-academicos.md",
+        "processos-academicos.md"
+      ],
+      "scores_top5": [
+        0.508,
+        0.429,
+        0.413,
+        0.409,
+        0.399
+      ],
+      "P@1": 1.0,
+      "R@1": 0.5,
+      "F1@1": 0.6666666666666666,
+      "P@3": 1.0,
+      "R@3": 0.5,
+      "F1@3": 0.6666666666666666,
+      "P@5": 1.0,
+      "R@5": 1.0,
+      "F1@5": 1.0,
+      "RR": 1.0
+    },
+    {
+      "query": "qual a nota minima para aprovacao",
+      "relevant_sources": [
+        "processos-academicos.md",
+        "institucional.md"
+      ],
+      "retrieved_top5": [
+        "institucional.md",
+        "processos-academicos.md",
+        "institucional.md",
+        "processos-academicos.md",
+        "disciplinas-7-semestre.md"
+      ],
+      "scores_top5": [
+        0.426,
+        0.407,
+        0.375,
+        0.37,
+        0.322
+      ],
+      "P@1": 1.0,
+      "R@1": 0.5,
+      "F1@1": 0.6666666666666666,
+      "P@3": 1.0,
+      "R@3": 1.0,
+      "F1@3": 1.0,
+      "P@5": 0.8,
+      "R@5": 1.0,
+      "F1@5": 0.888888888888889,
+      "RR": 1.0
+    },
+    {
+      "query": "como funciona o trancamento de matricula",
+      "relevant_sources": [
+        "processos-academicos.md"
+      ],
+      "retrieved_top5": [
+        "processos-academicos.md",
+        "institucional.md",
+        "disciplinas-6-semestre.md",
+        "processos-academicos.md",
+        "processos-academicos.md"
+      ],
+      "scores_top5": [
+        0.652,
+        0.553,
+        0.489,
+        0.487,
+        0.477
+      ],
+      "P@1": 1.0,
+      "R@1": 1.0,
+      "F1@1": 1.0,
+      "P@3": 0.3333333333333333,
+      "R@3": 1.0,
+      "F1@3": 0.5,
+      "P@5": 0.6,
+      "R@5": 1.0,
+      "F1@5": 0.7499999999999999,
+      "RR": 1.0
+    },
+    {
+      "query": "quais sao as disciplinas do segundo semestre",
+      "relevant_sources": [
+        "disciplinas-2-semestre.md",
+        "grade-curricular.md"
+      ],
+      "retrieved_top5": [
+        "processos-academicos.md",
+        "institucional.md",
+        "institucional.md",
+        "grade-curricular.md",
+        "processos-academicos.md"
+      ],
+      "scores_top5": [
+        0.642,
+        0.637,
+        0.62,
+        0.613,
+        0.583
+      ],
+      "P@1": 0.0,
+      "R@1": 0.0,
+      "F1@1": 0.0,
+      "P@3": 0.0,
+      "R@3": 0.0,
+      "F1@3": 0.0,
+      "P@5": 0.2,
+      "R@5": 0.5,
+      "F1@5": 0.28571428571428575,
+      "RR": 0.25
+    },
+    {
+      "query": "qual o pre-requisito de Banco de Dados II",
+      "relevant_sources": [
+        "grade-curricular.md"
+      ],
+      "retrieved_top5": [
+        "disciplinas-1-semestre.md",
+        "grade-curricular.md",
+        "grade-curricular.md",
+        "disciplinas-2-semestre.md",
+        "disciplinas-6-semestre.md"
+      ],
+      "scores_top5": [
+        0.535,
+        0.529,
+        0.52,
+        0.487,
+        0.469
+      ],
+      "P@1": 0.0,
+      "R@1": 0.0,
+      "F1@1": 0.0,
+      "P@3": 0.6666666666666666,
+      "R@3": 1.0,
+      "F1@3": 0.8,
+      "P@5": 0.4,
+      "R@5": 1.0,
+      "F1@5": 0.5714285714285715,
+      "RR": 0.5
+    },
+    {
+      "query": "quais sao as trilhas tematicas do curso",
+      "relevant_sources": [
+        "grade-curricular.md"
+      ],
+      "retrieved_top5": [
+        "grade-curricular.md",
+        "disciplinas-7-semestre.md",
+        "disciplinas-5-semestre.md",
+        "processos-academicos.md",
+        "institucional.md"
+      ],
+      "scores_top5": [
+        0.636,
+        0.562,
+        0.559,
+        0.556,
+        0.53
+      ],
+      "P@1": 1.0,
+      "R@1": 1.0,
+      "F1@1": 1.0,
+      "P@3": 0.3333333333333333,
+      "R@3": 1.0,
+      "F1@3": 0.5,
+      "P@5": 0.2,
+      "R@5": 1.0,
+      "F1@5": 0.33333333333333337,
+      "RR": 1.0
+    },
+    {
+      "query": "o que sao Transformers e atencao",
+      "relevant_sources": [
+        "disciplinas-5-semestre.md",
+        "disciplinas-7-semestre.md"
+      ],
+      "retrieved_top5": [
+        "disciplinas-1-semestre.md",
+        "grade-curricular.md",
+        "disciplinas-1-semestre.md",
+        "disciplinas-2-semestre.md",
+        "disciplinas-1-semestre.md"
+      ],
+      "scores_top5": [
+        0.296,
+        0.232,
+        0.23,
+        0.224,
+        0.222
+      ],
+      "P@1": 0.0,
+      "R@1": 0.0,
+      "F1@1": 0.0,
+      "P@3": 0.0,
+      "R@3": 0.0,
+      "F1@3": 0.0,
+      "P@5": 0.0,
+      "R@5": 0.0,
+      "F1@5": 0.0,
+      "RR": 0.0
+    },
+    {
+      "query": "como solicitar segunda chamada de prova",
+      "relevant_sources": [
+        "processos-academicos.md"
+      ],
+      "retrieved_top5": [
+        "processos-academicos.md",
+        "processos-academicos.md",
+        "disciplinas-7-semestre.md",
+        "processos-academicos.md",
+        "processos-academicos.md"
+      ],
+      "scores_top5": [
+        0.741,
+        0.332,
+        0.33,
+        0.329,
+        0.316
+      ],
+      "P@1": 1.0,
+      "R@1": 1.0,
+      "F1@1": 1.0,
+      "P@3": 0.6666666666666666,
+      "R@3": 1.0,
+      "F1@3": 0.8,
+      "P@5": 0.8,
+      "R@5": 1.0,
+      "F1@5": 0.888888888888889,
+      "RR": 1.0
+    },
+    {
+      "query": "como funciona o Projeto Integrador",
+      "relevant_sources": [
+        "disciplinas-5-semestre.md",
+        "grade-curricular.md",
+        "processos-academicos.md"
+      ],
+      "retrieved_top5": [
+        "disciplinas-5-semestre.md",
+        "processos-academicos.md",
+        "disciplinas-6-semestre.md",
+        "disciplinas-7-semestre.md",
+        "grade-curricular.md"
+      ],
+      "scores_top5": [
+        0.687,
+        0.598,
+        0.572,
+        0.56,
+        0.536
+      ],
+      "P@1": 1.0,
+      "R@1": 0.3333333333333333,
+      "F1@1": 0.5,
+      "P@3": 0.6666666666666666,
+      "R@3": 0.6666666666666666,
+      "F1@3": 0.6666666666666666,
+      "P@5": 0.6,
+      "R@5": 1.0,
+      "F1@5": 0.7499999999999999,
+      "RR": 1.0
+    },
+    {
+      "query": "o que cai em probabilidade e estatistica",
+      "relevant_sources": [
+        "disciplinas-3-semestre.md"
+      ],
+      "retrieved_top5": [
+        "disciplinas-3-semestre.md",
+        "processos-academicos.md",
+        "grade-curricular.md",
+        "institucional.md",
+        "disciplinas-4-semestre.md"
+      ],
+      "scores_top5": [
+        0.641,
+        0.453,
+        0.448,
+        0.417,
+        0.411
+      ],
+      "P@1": 1.0,
+      "R@1": 1.0,
+      "F1@1": 1.0,
+      "P@3": 0.3333333333333333,
+      "R@3": 1.0,
+      "F1@3": 0.5,
+      "P@5": 0.2,
+      "R@5": 1.0,
+      "F1@5": 0.33333333333333337,
+      "RR": 1.0
+    },
+    {
+      "query": "engenharia de dados e pipelines com Airflow",
+      "relevant_sources": [
+        "disciplinas-7-semestre.md"
+      ],
+      "retrieved_top5": [
+        "disciplinas-7-semestre.md",
+        "disciplinas-4-semestre.md",
+        "disciplinas-6-semestre.md",
+        "disciplinas-3-semestre.md",
+        "disciplinas-3-semestre.md"
+      ],
+      "scores_top5": [
+        0.736,
+        0.513,
+        0.489,
+        0.481,
+        0.432
+      ],
+      "P@1": 1.0,
+      "R@1": 1.0,
+      "F1@1": 1.0,
+      "P@3": 0.3333333333333333,
+      "R@3": 1.0,
+      "F1@3": 0.5,
+      "P@5": 0.2,
+      "R@5": 1.0,
+      "F1@5": 0.33333333333333337,
+      "RR": 1.0
+    },
+    {
+      "query": "o que e RAG processamento de linguagem natural",
+      "relevant_sources": [
+        "disciplinas-4-semestre.md",
+        "disciplinas-7-semestre.md"
+      ],
+      "retrieved_top5": [
+        "disciplinas-7-semestre.md",
+        "disciplinas-1-semestre.md",
+        "disciplinas-4-semestre.md",
+        "grade-curricular.md",
+        "grade-curricular.md"
+      ],
+      "scores_top5": [
+        0.693,
+        0.523,
+        0.476,
+        0.462,
+        0.451
+      ],
+      "P@1": 1.0,
+      "R@1": 0.5,
+      "F1@1": 0.6666666666666666,
+      "P@3": 0.6666666666666666,
+      "R@3": 1.0,
+      "F1@3": 0.8,
+      "P@5": 0.4,
+      "R@5": 1.0,
+      "F1@5": 0.5714285714285715,
+      "RR": 1.0
+    }
+  ],
+  "hybrid": {
+    "alpha": 0.4,
+    "aggregate": {
+      "n_queries": 22,
+      "P@1": 0.9545454545454546,
+      "R@1": 0.8333333333333334,
+      "F1@1": 0.8712121212121212,
+      "P@3": 0.45454545454545453,
+      "R@3": 0.8939393939393939,
+      "F1@3": 0.5757575757575758,
+      "P@5": 0.38181818181818183,
+      "R@5": 0.9772727272727273,
+      "F1@5": 0.5193001443001444,
+      "MRR": 0.9636363636363636
+    },
+    "per_query": [
+      {
+        "query": "o que e produto escalar e como calcular",
+        "relevant_sources": [
+          "disciplinas-1-semestre.md"
+        ],
+        "retrieved_top5": [
+          "disciplinas-1-semestre.md",
+          "disciplinas-1-semestre.md",
+          "disciplinas-7-semestre.md",
+          "disciplinas-7-semestre.md",
+          "grade-curricular.md"
+        ],
+        "scores_top5": [
+          0.256,
+          0.203,
+          0.197,
+          0.192,
+          0.186
+        ],
+        "P@1": 1.0,
+        "R@1": 1.0,
+        "F1@1": 1.0,
+        "P@3": 0.6666666666666666,
+        "R@3": 1.0,
+        "F1@3": 0.8,
+        "P@5": 0.4,
+        "R@5": 1.0,
+        "F1@5": 0.5714285714285715,
+        "RR": 1.0
+      },
+      {
+        "query": "como funciona normalizacao em banco de dados",
+        "relevant_sources": [
+          "disciplinas-1-semestre.md"
+        ],
+        "retrieved_top5": [
+          "disciplinas-1-semestre.md",
+          "disciplinas-4-semestre.md",
+          "disciplinas-5-semestre.md",
+          "disciplinas-2-semestre.md",
+          "disciplinas-3-semestre.md"
+        ],
+        "scores_top5": [
+          0.336,
+          0.31,
+          0.258,
+          0.223,
+          0.223
+        ],
+        "P@1": 1.0,
+        "R@1": 1.0,
+        "F1@1": 1.0,
+        "P@3": 0.3333333333333333,
+        "R@3": 1.0,
+        "F1@3": 0.5,
+        "P@5": 0.2,
+        "R@5": 1.0,
+        "F1@5": 0.33333333333333337,
+        "RR": 1.0
+      },
+      {
+        "query": "diferenca entre INNER JOIN e LEFT JOIN",
+        "relevant_sources": [
+          "disciplinas-1-semestre.md"
+        ],
+        "retrieved_top5": [
+          "disciplinas-1-semestre.md",
+          "processos-academicos.md",
+          "processos-academicos.md",
+          "processos-academicos.md",
+          "disciplinas-6-semestre.md"
+        ],
+        "scores_top5": [
+          0.162,
+          0.119,
+          0.1,
+          0.096,
+          0.096
+        ],
+        "P@1": 1.0,
+        "R@1": 1.0,
+        "F1@1": 1.0,
+        "P@3": 0.3333333333333333,
+        "R@3": 1.0,
+        "F1@3": 0.5,
+        "P@5": 0.2,
+        "R@5": 1.0,
+        "F1@5": 0.33333333333333337,
+        "RR": 1.0
+      },
+      {
+        "query": "o que e CRISP-DM e quais sao suas etapas",
+        "relevant_sources": [
+          "disciplinas-1-semestre.md"
+        ],
+        "retrieved_top5": [
+          "disciplinas-1-semestre.md",
+          "grade-curricular.md",
+          "disciplinas-3-semestre.md",
+          "processos-academicos.md",
+          "disciplinas-1-semestre.md"
+        ],
+        "scores_top5": [
+          0.305,
+          0.18,
+          0.172,
+          0.169,
+          0.162
+        ],
+        "P@1": 1.0,
+        "R@1": 1.0,
+        "F1@1": 1.0,
+        "P@3": 0.3333333333333333,
+        "R@3": 1.0,
+        "F1@3": 0.5,
+        "P@5": 0.4,
+        "R@5": 1.0,
+        "F1@5": 0.5714285714285715,
+        "RR": 1.0
+      },
+      {
+        "query": "como funciona Scrum e metodologia agil",
+        "relevant_sources": [
+          "disciplinas-1-semestre.md"
+        ],
+        "retrieved_top5": [
+          "disciplinas-1-semestre.md",
+          "disciplinas-4-semestre.md",
+          "disciplinas-5-semestre.md",
+          "disciplinas-6-semestre.md",
+          "disciplinas-6-semestre.md"
+        ],
+        "scores_top5": [
+          0.24,
+          0.214,
+          0.194,
+          0.184,
+          0.179
+        ],
+        "P@1": 1.0,
+        "R@1": 1.0,
+        "F1@1": 1.0,
+        "P@3": 0.3333333333333333,
+        "R@3": 1.0,
+        "F1@3": 0.5,
+        "P@5": 0.2,
+        "R@5": 1.0,
+        "F1@5": 0.33333333333333337,
+        "RR": 1.0
+      },
+      {
+        "query": "explique estruturas de repeticao em Python",
+        "relevant_sources": [
+          "disciplinas-1-semestre.md"
+        ],
+        "retrieved_top5": [
+          "disciplinas-1-semestre.md",
+          "disciplinas-2-semestre.md",
+          "disciplinas-3-semestre.md",
+          "disciplinas-3-semestre.md",
+          "grade-curricular.md"
+        ],
+        "scores_top5": [
+          0.403,
+          0.221,
+          0.184,
+          0.17,
+          0.165
+        ],
+        "P@1": 1.0,
+        "R@1": 1.0,
+        "F1@1": 1.0,
+        "P@3": 0.3333333333333333,
+        "R@3": 1.0,
+        "F1@3": 0.5,
+        "P@5": 0.2,
+        "R@5": 1.0,
+        "F1@5": 0.33333333333333337,
+        "RR": 1.0
+      },
+      {
+        "query": "o que e o teorema CAP em NoSQL",
+        "relevant_sources": [
+          "disciplinas-3-semestre.md"
+        ],
+        "retrieved_top5": [
+          "disciplinas-3-semestre.md",
+          "disciplinas-5-semestre.md",
+          "grade-curricular.md",
+          "grade-curricular.md",
+          "disciplinas-7-semestre.md"
+        ],
+        "scores_top5": [
+          0.337,
+          0.193,
+          0.173,
+          0.166,
+          0.164
+        ],
+        "P@1": 1.0,
+        "R@1": 1.0,
+        "F1@1": 1.0,
+        "P@3": 0.3333333333333333,
+        "R@3": 1.0,
+        "F1@3": 0.5,
+        "P@5": 0.2,
+        "R@5": 1.0,
+        "F1@5": 0.33333333333333337,
+        "RR": 1.0
+      },
+      {
+        "query": "como funciona machine learning supervisionado",
+        "relevant_sources": [
+          "disciplinas-4-semestre.md"
+        ],
+        "retrieved_top5": [
+          "disciplinas-4-semestre.md",
+          "grade-curricular.md",
+          "institucional.md",
+          "disciplinas-4-semestre.md",
+          "grade-curricular.md"
+        ],
+        "scores_top5": [
+          0.336,
+          0.287,
+          0.264,
+          0.256,
+          0.207
+        ],
+        "P@1": 1.0,
+        "R@1": 1.0,
+        "F1@1": 1.0,
+        "P@3": 0.3333333333333333,
+        "R@3": 1.0,
+        "F1@3": 0.5,
+        "P@5": 0.4,
+        "R@5": 1.0,
+        "F1@5": 0.5714285714285715,
+        "RR": 1.0
+      },
+      {
+        "query": "o que sao redes neurais convolucionais",
+        "relevant_sources": [
+          "disciplinas-5-semestre.md"
+        ],
+        "retrieved_top5": [
+          "disciplinas-5-semestre.md",
+          "grade-curricular.md",
+          "disciplinas-1-semestre.md",
+          "grade-curricular.md",
+          "disciplinas-4-semestre.md"
+        ],
+        "scores_top5": [
+          0.285,
+          0.21,
+          0.196,
+          0.166,
+          0.149
+        ],
+        "P@1": 1.0,
+        "R@1": 1.0,
+        "F1@1": 1.0,
+        "P@3": 0.3333333333333333,
+        "R@3": 1.0,
+        "F1@3": 0.5,
+        "P@5": 0.2,
+        "R@5": 1.0,
+        "F1@5": 0.33333333333333337,
+        "RR": 1.0
+      },
+      {
+        "query": "como funciona TF-IDF e BM25",
+        "relevant_sources": [
+          "disciplinas-4-semestre.md"
+        ],
+        "retrieved_top5": [
+          "disciplinas-4-semestre.md",
+          "grade-curricular.md",
+          "disciplinas-2-semestre.md",
+          "disciplinas-2-semestre.md",
+          "disciplinas-6-semestre.md"
+        ],
+        "scores_top5": [
+          0.297,
+          0.244,
+          0.189,
+          0.166,
+          0.164
+        ],
+        "P@1": 1.0,
+        "R@1": 1.0,
+        "F1@1": 1.0,
+        "P@3": 0.3333333333333333,
+        "R@3": 1.0,
+        "F1@3": 0.5,
+        "P@5": 0.2,
+        "R@5": 1.0,
+        "F1@5": 0.33333333333333337,
+        "RR": 1.0
+      },
+      {
+        "query": "qual a frequencia minima exigida no CEUB",
+        "relevant_sources": [
+          "processos-academicos.md",
+          "institucional.md"
+        ],
+        "retrieved_top5": [
+          "institucional.md",
+          "processos-academicos.md",
+          "institucional.md",
+          "processos-academicos.md",
+          "institucional.md"
+        ],
+        "scores_top5": [
+          0.37,
+          0.21,
+          0.189,
+          0.186,
+          0.18
+        ],
+        "P@1": 1.0,
+        "R@1": 0.5,
+        "F1@1": 0.6666666666666666,
+        "P@3": 1.0,
+        "R@3": 1.0,
+        "F1@3": 1.0,
+        "P@5": 1.0,
+        "R@5": 1.0,
+        "F1@5": 1.0,
+        "RR": 1.0
+      },
+      {
+        "query": "qual a nota minima para aprovacao",
+        "relevant_sources": [
+          "processos-academicos.md",
+          "institucional.md"
+        ],
+        "retrieved_top5": [
+          "institucional.md",
+          "processos-academicos.md",
+          "processos-academicos.md",
+          "institucional.md",
+          "disciplinas-7-semestre.md"
+        ],
+        "scores_top5": [
+          0.359,
+          0.278,
+          0.205,
+          0.191,
+          0.134
+        ],
+        "P@1": 1.0,
+        "R@1": 0.5,
+        "F1@1": 0.6666666666666666,
+        "P@3": 1.0,
+        "R@3": 1.0,
+        "F1@3": 1.0,
+        "P@5": 0.8,
+        "R@5": 1.0,
+        "F1@5": 0.888888888888889,
+        "RR": 1.0
+      },
+      {
+        "query": "como funciona o trancamento de matricula",
+        "relevant_sources": [
+          "processos-academicos.md"
+        ],
+        "retrieved_top5": [
+          "processos-academicos.md",
+          "institucional.md",
+          "disciplinas-4-semestre.md",
+          "processos-academicos.md",
+          "disciplinas-6-semestre.md"
+        ],
+        "scores_top5": [
+          0.416,
+          0.256,
+          0.222,
+          0.198,
+          0.197
+        ],
+        "P@1": 1.0,
+        "R@1": 1.0,
+        "F1@1": 1.0,
+        "P@3": 0.3333333333333333,
+        "R@3": 1.0,
+        "F1@3": 0.5,
+        "P@5": 0.4,
+        "R@5": 1.0,
+        "F1@5": 0.5714285714285715,
+        "RR": 1.0
+      },
+      {
+        "query": "quais sao as disciplinas do segundo semestre",
+        "relevant_sources": [
+          "disciplinas-2-semestre.md",
+          "grade-curricular.md"
+        ],
+        "retrieved_top5": [
+          "institucional.md",
+          "processos-academicos.md",
+          "institucional.md",
+          "processos-academicos.md",
+          "grade-curricular.md"
+        ],
+        "scores_top5": [
+          0.35,
+          0.311,
+          0.272,
+          0.269,
+          0.262
+        ],
+        "P@1": 0.0,
+        "R@1": 0.0,
+        "F1@1": 0.0,
+        "P@3": 0.0,
+        "R@3": 0.0,
+        "F1@3": 0.0,
+        "P@5": 0.2,
+        "R@5": 0.5,
+        "F1@5": 0.28571428571428575,
+        "RR": 0.2
+      },
+      {
+        "query": "qual o pre-requisito de Banco de Dados II",
+        "relevant_sources": [
+          "grade-curricular.md"
+        ],
+        "retrieved_top5": [
+          "grade-curricular.md",
+          "grade-curricular.md",
+          "disciplinas-1-semestre.md",
+          "disciplinas-2-semestre.md",
+          "grade-curricular.md"
+        ],
+        "scores_top5": [
+          0.315,
+          0.306,
+          0.299,
+          0.259,
+          0.237
+        ],
+        "P@1": 1.0,
+        "R@1": 1.0,
+        "F1@1": 1.0,
+        "P@3": 0.6666666666666666,
+        "R@3": 1.0,
+        "F1@3": 0.8,
+        "P@5": 0.6,
+        "R@5": 1.0,
+        "F1@5": 0.7499999999999999,
+        "RR": 1.0
+      },
+      {
+        "query": "quais sao as trilhas tematicas do curso",
+        "relevant_sources": [
+          "grade-curricular.md"
+        ],
+        "retrieved_top5": [
+          "grade-curricular.md",
+          "grade-curricular.md",
+          "processos-academicos.md",
+          "disciplinas-7-semestre.md",
+          "disciplinas-5-semestre.md"
+        ],
+        "scores_top5": [
+          0.296,
+          0.289,
+          0.278,
+          0.263,
+          0.256
+        ],
+        "P@1": 1.0,
+        "R@1": 1.0,
+        "F1@1": 1.0,
+        "P@3": 0.6666666666666666,
+        "R@3": 1.0,
+        "F1@3": 0.8,
+        "P@5": 0.4,
+        "R@5": 1.0,
+        "F1@5": 0.5714285714285715,
+        "RR": 1.0
+      },
+      {
+        "query": "o que sao Transformers e atencao",
+        "relevant_sources": [
+          "disciplinas-5-semestre.md",
+          "disciplinas-7-semestre.md"
+        ],
+        "retrieved_top5": [
+          "disciplinas-7-semestre.md",
+          "disciplinas-1-semestre.md",
+          "grade-curricular.md",
+          "disciplinas-5-semestre.md",
+          "disciplinas-1-semestre.md"
+        ],
+        "scores_top5": [
+          0.155,
+          0.142,
+          0.112,
+          0.112,
+          0.099
+        ],
+        "P@1": 1.0,
+        "R@1": 0.5,
+        "F1@1": 0.6666666666666666,
+        "P@3": 0.3333333333333333,
+        "R@3": 0.5,
+        "F1@3": 0.4,
+        "P@5": 0.4,
+        "R@5": 1.0,
+        "F1@5": 0.5714285714285715,
+        "RR": 1.0
+      },
+      {
+        "query": "como solicitar segunda chamada de prova",
+        "relevant_sources": [
+          "processos-academicos.md"
+        ],
+        "retrieved_top5": [
+          "processos-academicos.md",
+          "processos-academicos.md",
+          "institucional.md",
+          "processos-academicos.md",
+          "disciplinas-7-semestre.md"
+        ],
+        "scores_top5": [
+          0.476,
+          0.151,
+          0.151,
+          0.14,
+          0.136
+        ],
+        "P@1": 1.0,
+        "R@1": 1.0,
+        "F1@1": 1.0,
+        "P@3": 0.6666666666666666,
+        "R@3": 1.0,
+        "F1@3": 0.8,
+        "P@5": 0.6,
+        "R@5": 1.0,
+        "F1@5": 0.7499999999999999,
+        "RR": 1.0
+      },
+      {
+        "query": "como funciona o Projeto Integrador",
+        "relevant_sources": [
+          "disciplinas-5-semestre.md",
+          "grade-curricular.md",
+          "processos-academicos.md"
+        ],
+        "retrieved_top5": [
+          "disciplinas-5-semestre.md",
+          "processos-academicos.md",
+          "disciplinas-7-semestre.md",
+          "disciplinas-6-semestre.md",
+          "grade-curricular.md"
+        ],
+        "scores_top5": [
+          0.332,
+          0.314,
+          0.285,
+          0.283,
+          0.277
+        ],
+        "P@1": 1.0,
+        "R@1": 0.3333333333333333,
+        "F1@1": 0.5,
+        "P@3": 0.6666666666666666,
+        "R@3": 0.6666666666666666,
+        "F1@3": 0.6666666666666666,
+        "P@5": 0.6,
+        "R@5": 1.0,
+        "F1@5": 0.7499999999999999,
+        "RR": 1.0
+      },
+      {
+        "query": "o que cai em probabilidade e estatistica",
+        "relevant_sources": [
+          "disciplinas-3-semestre.md"
+        ],
+        "retrieved_top5": [
+          "disciplinas-3-semestre.md",
+          "grade-curricular.md",
+          "processos-academicos.md",
+          "disciplinas-1-semestre.md",
+          "institucional.md"
+        ],
+        "scores_top5": [
+          0.372,
+          0.303,
+          0.188,
+          0.178,
+          0.174
+        ],
+        "P@1": 1.0,
+        "R@1": 1.0,
+        "F1@1": 1.0,
+        "P@3": 0.3333333333333333,
+        "R@3": 1.0,
+        "F1@3": 0.5,
+        "P@5": 0.2,
+        "R@5": 1.0,
+        "F1@5": 0.33333333333333337,
+        "RR": 1.0
+      },
+      {
+        "query": "engenharia de dados e pipelines com Airflow",
+        "relevant_sources": [
+          "disciplinas-7-semestre.md"
+        ],
+        "retrieved_top5": [
+          "disciplinas-7-semestre.md",
+          "grade-curricular.md",
+          "disciplinas-3-semestre.md",
+          "disciplinas-4-semestre.md",
+          "institucional.md"
+        ],
+        "scores_top5": [
+          0.416,
+          0.257,
+          0.247,
+          0.221,
+          0.22
+        ],
+        "P@1": 1.0,
+        "R@1": 1.0,
+        "F1@1": 1.0,
+        "P@3": 0.3333333333333333,
+        "R@3": 1.0,
+        "F1@3": 0.5,
+        "P@5": 0.2,
+        "R@5": 1.0,
+        "F1@5": 0.33333333333333337,
+        "RR": 1.0
+      },
+      {
+        "query": "o que e RAG processamento de linguagem natural",
+        "relevant_sources": [
+          "disciplinas-4-semestre.md",
+          "disciplinas-7-semestre.md"
+        ],
+        "retrieved_top5": [
+          "disciplinas-7-semestre.md",
+          "grade-curricular.md",
+          "grade-curricular.md",
+          "disciplinas-1-semestre.md",
+          "disciplinas-4-semestre.md"
+        ],
+        "scores_top5": [
+          0.407,
+          0.358,
+          0.29,
+          0.225,
+          0.218
+        ],
+        "P@1": 1.0,
+        "R@1": 0.5,
+        "F1@1": 0.6666666666666666,
+        "P@3": 0.3333333333333333,
+        "R@3": 0.5,
+        "F1@3": 0.4,
+        "P@5": 0.4,
+        "R@5": 1.0,
+        "F1@5": 0.5714285714285715,
+        "RR": 1.0
+      }
+    ]
+  }
+}
