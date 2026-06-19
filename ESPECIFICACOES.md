@@ -3,6 +3,9 @@
 **Autor:** Matheus Alves
 **Curso:** Ciência de Dados e Machine Learning — CEUB
 **Data:** 2026-05-14
+**Autor:** Thiago derani
+**Curso:** Ads — CEUB
+**Data:** 2026-05-14
 
 ---
 
